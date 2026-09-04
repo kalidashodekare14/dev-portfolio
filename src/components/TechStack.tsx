@@ -1,12 +1,49 @@
 "use client";
 
 import { Layers, Server, Wrench } from "lucide-react";
+import { BiLogoReact, BiLogoTypescript, BiLogoNodejs } from "react-icons/bi";
+import { FaAws } from "react-icons/fa";
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiExpress,
+  SiNestjs,
+  SiMongodb,
+  SiPostgresql,
+  SiRedis,
+  SiGit,
+  SiDocker,
+  SiVercel,
+  SiGithub,
+  SiLinux,
+} from "react-icons/si";
+import { VscVscode } from "react-icons/vsc";
 import { techStack } from "@/data/techstack";
 
 const categoryIcons: Record<string, React.ReactNode> = {
   Frontend: <Layers className="w-5 h-5 text-primary" />,
   Backend: <Server className="w-5 h-5 text-primary" />,
   Tools: <Wrench className="w-5 h-5 text-primary" />,
+};
+
+const skillMeta: Record<string, { icon: React.ReactNode; color: string }> = {
+  "React.js": { icon: <BiLogoReact />, color: "#61DAFB" },
+  "Next.js": { icon: <SiNextdotjs />, color: "#ffffff" },
+  "TypeScript": { icon: <BiLogoTypescript />, color: "#3178C6" },
+  "Tailwind CSS": { icon: <SiTailwindcss />, color: "#06B6D4" },
+  "Node.js": { icon: <BiLogoNodejs />, color: "#339933" },
+  "Express.js": { icon: <SiExpress />, color: "#ffffff" },
+  "Nest.js": { icon: <SiNestjs />, color: "#E0234E" },
+  "MongoDB": { icon: <SiMongodb />, color: "#47A248" },
+  "PostgreSQL": { icon: <SiPostgresql />, color: "#4169E1" },
+  "Redis": { icon: <SiRedis />, color: "#DC382D" },
+  "Git": { icon: <SiGit />, color: "#F05032" },
+  "Docker": { icon: <SiDocker />, color: "#2496ED" },
+  "AWS": { icon: <FaAws />, color: "#FF9900" },
+  "Vercel": { icon: <SiVercel />, color: "#ffffff" },
+  "GitHub Actions": { icon: <SiGithub />, color: "#ffffff" },
+  "Linux": { icon: <SiLinux />, color: "#FCC624" },
+  "VS Code": { icon: <VscVscode />, color: "#007ACC" },
 };
 
 export default function TechStack() {
@@ -38,15 +75,18 @@ export default function TechStack() {
                 </h3>
               </div>
               <div className="flex flex-col gap-3">
-                {category.skills.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="flex items-center gap-3 px-4 py-3 rounded-xl bg-muted hover:bg-primary/10 border border-transparent hover:border-primary/20 hover:translate-x-1.5 transition-all cursor-default"
-                  >
-                    <span className="text-xl">{skill.icon}</span>
-                    <span className="text-foreground font-medium">{skill.name}</span>
-                  </div>
-                ))}
+                {category.skills.map((name) => {
+                  const meta = skillMeta[name];
+                  return (
+                    <div
+                      key={name}
+                      className="flex items-center gap-3 px-4 py-3 rounded-xl bg-muted hover:bg-primary/10 border border-transparent hover:border-primary/20 hover:translate-x-1.5 transition-all cursor-default"
+                    >
+                      <span className="text-xl" style={{ color: meta?.color }}>{meta?.icon}</span>
+                      <span className="text-foreground font-medium">{name}</span>
+                    </div>
+                  );
+                })}
               </div>
             </div>
           ))}

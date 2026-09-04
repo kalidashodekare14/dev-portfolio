@@ -1,48 +1,19 @@
-export interface Skill {
-  name: string;
-  icon: string;
-}
-
 export interface TechCategory {
   title: string;
-  skills: Skill[];
+  skills: string[];
 }
 
 export const techStack: TechCategory[] = [
   {
     title: "Frontend",
-    skills: [
-      { name: "React", icon: "⚛️" },
-      { name: "Next.js", icon: "▲" },
-      { name: "TypeScript", icon: "📘" },
-      { name: "Tailwind CSS", icon: "🎨" },
-      { name: "HTML5", icon: "📄" },
-      { name: "CSS3", icon: "🎭" },
-      { name: "JavaScript", icon: "💛" },
-    ],
+    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
   },
   {
     title: "Backend",
-    skills: [
-      { name: "Node.js", icon: "🟢" },
-      { name: "Express.js", icon: "🚀" },
-      { name: "Python", icon: "🐍" },
-      { name: "FastAPI", icon: "⚡" },
-      { name: "PostgreSQL", icon: "🐘" },
-      { name: "MongoDB", icon: "🍃" },
-      { name: "Redis", icon: "🔴" },
-    ],
+    skills: ["Node.js", "Express.js", "Nest.js", "MongoDB", "PostgreSQL", "Redis"],
   },
   {
     title: "Tools",
-    skills: [
-      { name: "Git", icon: "🔀" },
-      { name: "Docker", icon: "🐳" },
-      { name: "AWS", icon: "☁️" },
-      { name: "Vercel", icon: "▲" },
-      { name: "GitHub Actions", icon: "⚙️" },
-      { name: "Linux", icon: "🐧" },
-      { name: "VS Code", icon: "💻" },
-    ],
+    skills: ["Git", "Docker", "AWS", "Vercel", "GitHub Actions", "Linux", "VS Code"],
   },
 ];
