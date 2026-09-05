@@ -1,6 +1,7 @@
 "use client";
 
-import { User, Mail, Phone, MapPin, Link2, GitFork } from "lucide-react";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Link2, GitFork } from "lucide-react";
 
 const socialLinks = [
   { icon: <Link2 className="w-4 h-4" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash" },
@@ -67,10 +68,14 @@ export default function AboutMe() {
         <div className="sr sr-right sr-scale flex justify-center">
           <div className="relative">
             <div className="absolute -inset-2 rounded-2xl bg-primary/15 blur-xl"></div>
-            <div className="relative w-64 h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden border border-primary/30 bg-card">
-              <div className="w-full h-full flex items-center justify-center">
-                <User className="w-20 h-20 text-foreground/10" />
-              </div>
+            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-primary/30 bg-card">
+              <Image
+                src="/my_photo.jpg"
+                alt="My Photo"
+                fill
+                className="object-cover"
+                priority
+              />
             </div>
           </div>
         </div>

@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { ExternalLink, GitFork, X, ArrowRight } from "lucide-react";
+import { ExternalLink, GitFork, X } from "lucide-react";
+import { SiGithub } from "react-icons/si";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import { projects, type Project } from "@/data/projects";
 
 export default function Projects() {
@@ -20,27 +22,55 @@ export default function Projects() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <div
               key={project.id}
-              onClick={() => setSelectedProject(project)}
-              className={`sr sr-delay-${(index % 6) + 1} cursor-pointer group relative rounded-2xl bg-card border border-border hover:border-primary/40 overflow-hidden hover:-translate-y-2 transition-all duration-300`}
+              className="group relative rounded-2xl bg-card border border-border hover:border-primary/40 overflow-hidden hover:-translate-y-2 transition-all duration-300 ease-out"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-              <div className="h-48 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors relative overflow-hidden">
-                <GitFork className="w-12 h-12 text-foreground/20 group-hover:scale-110 group-hover:text-primary/40 transition-all duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-300 ease-out"></div>
+              <div className="h-48 bg-muted flex items-center justify-center group-hover:bg-primary/5 transition-colors duration-300 relative overflow-hidden">
+                <GitFork className="w-12 h-12 text-foreground/20 group-hover:scale-110 group-hover:text-primary/40 transition-all duration-300 ease-out" />
               </div>
               <div className="relative z-10 p-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">{project.title}</h3>
-                  <ArrowRight className="w-4 h-4 text-foreground/30 group-hover:text-primary group-hover:translate-x-1 transition-all" />
+                  <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors duration-300">{project.title}</h3>
                 </div>
                 <p className="text-foreground/60 text-sm mb-4 line-clamp-2">{project.shortDescription}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
                     <span key={tag} className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-medium border border-primary/20">{tag}</span>
                   ))}
+                </div>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => setSelectedProject(project)}
+                    className="px-4 py-2 rounded-full bg-primary text-[#D4D4D6] text-sm font-medium border border-primary hover:bg-primary/80 hover:border-primary/60 transition-all duration-300"
+                  >
+                    View Details
+                  </button>
+                  {project.live && (
+                    <a
+                      href={project.live}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/50 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
+                    >
+                      <HiOutlineExternalLink className="w-4 h-4" />
+                    </a>
+                  )}
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/50 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
+                    >
+                      <SiGithub className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               </div>
             </div>
