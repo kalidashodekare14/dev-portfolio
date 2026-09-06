@@ -71,7 +71,7 @@ export default function ContactForm() {
                   <div key={item.label} className={`sr sr-left sr-delay-${i + 1} flex items-center gap-4 p-4 rounded-xl bg-card/50 border border-border hover:border-primary/30 hover:translate-x-2 transition-all cursor-default`}>
                     {item.icon}
                     <div>
-                      <span className="text-foreground/50 text-sm">{item.label}</span>
+                       <span className="text-foreground/60 text-sm">{item.label}</span>
                       <p className="text-foreground font-medium">{item.value}</p>
                     </div>
                   </div>

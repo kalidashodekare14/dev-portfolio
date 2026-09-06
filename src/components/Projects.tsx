@@ -55,7 +55,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/50 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
+                       className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
                     >
                       <HiOutlineExternalLink className="w-4 h-4" />
                     </a>
@@ -66,7 +66,7 @@ export default function Projects() {
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
-                      className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/50 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
+                       className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
                     >
                       <SiGithub className="w-4 h-4" />
                     </a>
@@ -93,7 +93,7 @@ export default function Projects() {
                 <h3 className="text-2xl font-bold bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">{selectedProject.title}</h3>
                 <button
                   onClick={() => setSelectedProject(null)}
-                  className="text-foreground/50 hover:text-foreground hover:rotate-90 transition-all duration-300 p-1"
+                   className="text-foreground/60 hover:text-foreground hover:rotate-90 transition-all duration-300 p-1"
                 >
                   <X className="w-5 h-5" />
                 </button>
@@ -102,7 +102,7 @@ export default function Projects() {
               <p className="text-foreground/70 leading-relaxed mb-6">{selectedProject.fullDescription}</p>
 
               <div className="mb-6">
-                <h4 className="text-sm font-semibold text-foreground/50 uppercase mb-3">Features</h4>
+                 <h4 className="text-sm font-semibold text-foreground/60 uppercase mb-3">Features</h4>
                 <ul className="space-y-2">
                   {selectedProject.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-2 text-foreground/70 text-sm">

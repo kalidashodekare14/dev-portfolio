@@ -16,6 +16,7 @@ import {
   SiVercel,
   SiGithub,
   SiLinux,
+  SiShadcnui,
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { techStack } from "@/data/techstack";
@@ -50,6 +51,7 @@ const skillMeta: Record<string, SkillMeta> = {
   "GitHub Actions": { icon: <SiGithub />, useThemeColor: true },
   "Linux": { icon: <SiLinux />, color: "#FCC624" },
   "VS Code": { icon: <VscVscode />, color: "#007ACC" },
+  "shadcn/ui": { icon: <SiShadcnui />, color: "#F8FAFC" },
 };
 
 export default function TechStack() {
@@ -95,7 +97,7 @@ export default function TechStack() {
                           style={meta?.color && !meta?.useThemeColor ? { color: meta.color } : undefined}
                         >{meta?.icon}</span>
                       </div>
-                      <span className="text-xs text-muted-foreground font-medium text-center leading-tight w-full group-hover/item:text-foreground transition-colors duration-300">{name}</span>
+                       <span className="text-xs text-foreground/70 font-medium text-center leading-tight w-full group-hover/item:text-foreground transition-colors duration-300">{name}</span>
                     </div>
                   );
                 })}

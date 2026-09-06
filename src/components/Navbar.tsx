@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <button onClick={() => handleNav("home")} className="text-xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+        <button onClick={() => handleNav("home")} className="text-xl font-bold bg-linear-to-r from-primary to-purple-400 bg-clip-text text-transparent">
           Kalidash
         </button>
 
@@ -45,11 +45,10 @@ export default function Navbar() {
             <li key={link.target}>
               <button
                 onClick={() => handleNav(link.target)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                  active === link.target
-                    ? "bg-primary/15 text-primary"
-                    : "text-foreground/60 hover:text-foreground hover:bg-foreground/5"
-                }`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${active === link.target
+                    ? "bg-primary/25 text-[#c9b1f8]"
+                    : "text-foreground/70 hover:text-foreground hover:bg-foreground/10"
+                  }`}
               >
                 {link.label}
               </button>
@@ -60,7 +59,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={toggle}
-            className="p-2.5 rounded-full bg-card border border-border text-foreground/60 hover:text-foreground hover:border-primary/40 transition-all"
+            className="p-2.5 rounded-full bg-card border border-border text-foreground/70 hover:text-foreground hover:border-primary/40 transition-all"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -76,7 +75,7 @@ export default function Navbar() {
         <div className="flex md:hidden items-center gap-2">
           <button
             onClick={toggle}
-            className="p-2 rounded-full text-foreground/60 hover:text-foreground transition-colors"
+            className="p-2 rounded-full text-foreground/70 hover:text-foreground transition-colors"
             aria-label="Toggle theme"
           >
             {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
@@ -98,11 +97,10 @@ export default function Navbar() {
               <li key={link.target}>
                 <button
                   onClick={() => handleNav(link.target)}
-                  className={`w-full px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
-                    active === link.target
-                      ? "bg-primary/15 text-primary"
-                      : "text-foreground/60 hover:text-foreground"
-                  }`}
+                  className={`w-full px-6 py-2.5 rounded-full text-sm font-medium transition-all ${active === link.target
+                      ? "bg-primary/20 text-primary"
+                      : "text-foreground/70 hover:text-foreground hover:bg-foreground/10"
+                    }`}
                 >
                   {link.label}
                 </button>

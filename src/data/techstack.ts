@@ -6,7 +6,7 @@ export interface TechCategory {
 export const techStack: TechCategory[] = [
   {
     title: "Frontend",
-    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS"],
+    skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
   },
   {
     title: "Backend",

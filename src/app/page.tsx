@@ -8,6 +8,7 @@ import Education from "@/components/Education";
 import Experience from "@/components/Experience";
 import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
+import BackToTop from "@/components/BackToTop";
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Experience />
       <ContactForm />
       <Footer />
+      <BackToTop />
     </>
   );
 }

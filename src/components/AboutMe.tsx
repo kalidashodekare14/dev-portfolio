@@ -28,14 +28,14 @@ export default function AboutMe() {
               <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border flex-1">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
                 <div>
-                  <span className="text-foreground/50 text-xs">Phone</span>
+                  <span className="text-foreground/60 text-xs">Phone</span>
                   <p className="text-foreground text-sm font-medium">+91 98765 43210</p>
                 </div>
               </div>
               <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border flex-1">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <div>
-                  <span className="text-foreground/50 text-xs">Email</span>
+                  <span className="text-foreground/60 text-xs">Email</span>
                   <p className="text-foreground text-sm font-medium">kalidash@example.com</p>
                 </div>
               </div>
@@ -43,7 +43,7 @@ export default function AboutMe() {
             <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border">
               <MapPin className="w-4 h-4 text-primary shrink-0" />
               <div>
-                <span className="text-foreground/50 text-xs">Location</span>
+                <span className="text-foreground/60 text-xs">Location</span>
                 <p className="text-foreground text-sm font-medium">India</p>
               </div>
             </div>

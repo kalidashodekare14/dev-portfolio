@@ -13,7 +13,7 @@ export default function Experience() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Experience</span>
           </h2>
-          <p className="text-foreground/60 max-w-2xl mx-auto">My professional journey and work history.</p>
+          <p className="text-foreground/70 max-w-2xl mx-auto">My professional journey and work history.</p>
         </div>
 
         <div className="flex flex-col gap-6">
@@ -31,7 +31,7 @@ export default function Experience() {
                     <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">{entry.title}</h3>
                     <p className="text-primary font-medium text-sm mt-1">{entry.company}</p>
                   </div>
-                  <div className="space-y-1.5 text-xs text-muted-foreground">
+                  <div className="space-y-1.5 text-xs text-foreground/60">
                     {entry.location && (
                       <p className="flex items-center gap-2">
                         <MapPin className="w-3.5 h-3.5 text-primary/60" />
@@ -45,7 +45,7 @@ export default function Experience() {
                   </div>
                   {entry.tags && entry.tags.length > 0 && (
                     <div className="pt-2">
-                      <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2">Technologies</p>
+                      <p className="text-xs font-semibold text-foreground/60 uppercase tracking-wider mb-2">Technologies</p>
                       <div className="flex flex-wrap gap-2">
                         {entry.tags.map((tag) => (
                           <span key={tag} className="px-2.5 py-1 rounded-md bg-background border border-border text-xs text-foreground/70">

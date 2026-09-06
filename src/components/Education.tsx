@@ -39,7 +39,7 @@ export default function Education() {
                         <GraduationCap className="w-5 h-5 text-primary" />
                         <h3 className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">{entry.degree}</h3>
                       </div>
-                      <p className="text-foreground/50 text-sm mb-3">{entry.institution}</p>
+                      <p className="text-foreground/60 text-sm mb-3">{entry.institution}</p>
                       <p className="text-foreground/60 text-sm leading-relaxed">{entry.description}</p>
                     </div>
                   </div>

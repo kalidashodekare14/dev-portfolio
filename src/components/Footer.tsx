@@ -1,6 +1,6 @@
 "use client";
 
-import { GitFork, Link2, ArrowUp } from "lucide-react";
+import { GitFork, Link2 } from "lucide-react";
 
 const socialLinks = [
   { icon: <GitFork className="w-4 h-4" />, label: "GitHub", url: "https://github.com/kalidash" },
@@ -25,13 +25,9 @@ export default function Footer() {
           ))}
         </div>
 
-        <p className="text-foreground/40 text-sm">
+        <p className="text-foreground/60 text-sm">
           © {new Date().getFullYear()} Kalidash Odekare. All rights reserved.
         </p>
-
-        <button onClick={() => window.scrollTo({ top: 0 })} className="flex items-center gap-2 text-foreground/40 hover:text-foreground transition-colors text-sm hover:-translate-y-0.5">
-          <ArrowUp className="w-4 h-4" /> Back to Top
-        </button>
       </div>
     </footer>
   );
