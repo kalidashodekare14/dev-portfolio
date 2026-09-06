@@ -7,15 +7,15 @@ export interface EducationEntry {
 
 export const education: EducationEntry[] = [
   {
-    degree: "Bachelor of Technology in Computer Science",
-    institution: "University of Technology",
-    year: "2020 - 2024",
-    description: "Graduated with honors. Coursework includes Data Structures, Algorithms, Database Systems, Web Development, and Machine Learning.",
+    degree: "Honours in Political Science",
+    institution: "Pakerhat Government College",
+    year: "2026 - Present",
+    description: "Currently pursuing Honours in Political Science, developing analytical and research skills in governance, public policy, and international relations.",
   },
   {
-    degree: "Higher Secondary Education",
-    institution: "State Board of Education",
-    year: "2018 - 2020",
-    description: "Completed with focus on Science stream with Computer Science as an elective subject.",
+    degree: "Higher Secondary Certificate",
+    institution: "Gorey Degree College",
+    year: "2024 - 2025",
+    description: "Completed Higher Secondary Education with focus on academics, building a strong foundation for further studies.",
   },
 ];
