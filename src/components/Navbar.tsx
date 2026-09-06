@@ -12,6 +12,7 @@ const navLinks = [
   { label: "Tech", target: "techstack" },
   { label: "Projects", target: "projects" },
   { label: "Education", target: "education" },
+  { label: "Experience", target: "experience" },
   { label: "Contact", target: "contact" },
 ];
 
