@@ -1,11 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import { Mail, Phone, MapPin, Link2, GitFork } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { SiGithub } from "react-icons/si";
 
 const socialLinks = [
-  { icon: <Link2 className="w-4 h-4" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash" },
-  { icon: <GitFork className="w-4 h-4" />, label: "GitHub", url: "https://github.com/kalidash" },
+  { icon: <FaLinkedin className="w-5 h-5" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash", color: "#0A66C2" },
+  { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidash", color: "currentColor" },
+  { icon: <FaWhatsapp className="w-5 h-5" />, label: "WhatsApp", url: "https://wa.me/+8801728659562", color: "#25D366" },
+  { icon: <Mail className="w-5 h-5" />, label: "Email", url: "mailto:kalidashodekare14@gmail.com", color: "#EA4335" },
 ];
 
 export default function AboutMe() {
@@ -24,19 +28,19 @@ export default function AboutMe() {
           </p>
 
           <div className="sr sr-delay-2 flex flex-col gap-3">
-            <div className="flex items-center gap-3">
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border flex-1">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border">
                 <Phone className="w-4 h-4 text-primary shrink-0" />
-                <div>
+                <div className="min-w-0">
                   <span className="text-foreground/60 text-xs">Phone</span>
-                  <p className="text-foreground text-sm font-medium">+91 98765 43210</p>
+                  <p className="text-foreground text-sm font-medium truncate">+8801776046270</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border flex-1">
+              <div className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-card border border-border">
                 <Mail className="w-4 h-4 text-primary shrink-0" />
-                <div>
+                <div className="min-w-0">
                   <span className="text-foreground/60 text-xs">Email</span>
-                  <p className="text-foreground text-sm font-medium">kalidash@example.com</p>
+                  <p className="text-foreground text-sm font-medium truncate">kalidashodekare14@gmail.com</p>
                 </div>
               </div>
             </div>
@@ -44,22 +48,22 @@ export default function AboutMe() {
               <MapPin className="w-4 h-4 text-primary shrink-0" />
               <div>
                 <span className="text-foreground/60 text-xs">Location</span>
-                <p className="text-foreground text-sm font-medium">India</p>
+                <p className="text-foreground text-sm font-medium">Dinajpur, Bangladesh</p>
               </div>
             </div>
           </div>
 
-          <div className="sr sr-delay-3 flex gap-3">
+          <div className="sr sr-delay-3 flex flex-wrap gap-3">
             {socialLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-card border border-border text-foreground/70 hover:text-foreground hover:border-primary/50 hover:-translate-y-0.5 transition-all text-sm"
+                className="flex items-center justify-center w-11 h-11 rounded-full bg-card border border-border hover:border-primary/50 hover:-translate-y-0.5 transition-all text-foreground/70 hover:text-foreground"
+                style={{ color: link.color === "currentColor" ? undefined : link.color }}
               >
                 {link.icon}
-                {link.label}
               </a>
             ))}
           </div>
@@ -68,7 +72,7 @@ export default function AboutMe() {
         <div className="sr sr-right sr-scale flex justify-center">
           <div className="relative">
             <div className="absolute -inset-2 rounded-2xl bg-primary/15 blur-xl"></div>
-            <div className="relative w-80 h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-primary/30 bg-card">
+            <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-2xl overflow-hidden border border-primary/30 bg-card">
               <Image
                 src="/my_photo.jpg"
                 alt="My Photo"

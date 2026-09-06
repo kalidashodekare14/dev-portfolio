@@ -1,17 +1,21 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { Send, Mail, Phone, MapPin, Link2, GitFork, CheckCircle, AlertCircle } from "lucide-react";
+import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from "lucide-react";
+import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
+import { SiGithub } from "react-icons/si";
 
 const contactInfo = [
-  { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "kalidash@example.com" },
-  { icon: <Phone className="w-5 h-5 text-primary" />, label: "Phone", value: "+91 98765 43210" },
-  { icon: <MapPin className="w-5 h-5 text-primary" />, label: "Location", value: "India" },
+  { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "kalidashodekare14@gmail.com" },
+  { icon: <Phone className="w-5 h-5 text-primary" />, label: "Phone", value: "+8801776046270" },
+  { icon: <MapPin className="w-5 h-5 text-primary" />, label: "Location", value: "Dinajpur, Bangladesh" },
 ];
 
 const socialLinks = [
-  { icon: <Link2 className="w-4 h-4" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash" },
-  { icon: <GitFork className="w-4 h-4" />, label: "GitHub", url: "https://github.com/kalidash" },
+  { icon: <FaLinkedin className="w-5 h-5" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash", color: "#0A66C2" },
+  { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidash", color: "currentColor" },
+  { icon: <FaWhatsapp className="w-5 h-5" />, label: "WhatsApp", url: "https://wa.me/+8801728659562", color: "#25D366" },
+  { icon: <Mail className="w-5 h-5" />, label: "Email", url: "mailto:kalidashodekare14@gmail.com", color: "#EA4335" },
 ];
 
 export default function ContactForm() {
@@ -80,10 +84,10 @@ export default function ContactForm() {
             </div>
             <div className="sr sr-delay-4">
               <h3 className="text-xl font-semibold text-foreground mb-4">Follow Me</h3>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3">
                 {socialLinks.map((link) => (
-                  <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-card border border-border text-foreground/70 hover:text-foreground hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-0.5 transition-all text-sm">
-                    {link.icon}{link.label}
+                  <a key={link.label} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center w-11 h-11 rounded-full bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-0.5 transition-all text-foreground/70 hover:text-foreground" style={{ color: link.color === "currentColor" ? undefined : link.color }}>
+                    {link.icon}
                   </a>
                 ))}
               </div>
