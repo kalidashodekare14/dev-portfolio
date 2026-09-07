@@ -61,7 +61,7 @@ export default function ContactForm() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="sr text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Contact Me</span>
+            <span className="bg-linear-to-r from-foreground to-primary bg-clip-text text-transparent">Contact Me</span>
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">Have a project in mind? Let&apos;s work together.</p>
         </div>
