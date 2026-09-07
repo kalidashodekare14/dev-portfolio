@@ -46,7 +46,7 @@ export default function Navbar() {
               <button
                 onClick={() => handleNav(link.target)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${active === link.target
-                    ? "bg-primary/25 text-[#c9b1f8]"
+                    ? "bg-primary/25 text-primary"
                     : "text-foreground/70 hover:text-foreground hover:bg-foreground/10"
                   }`}
               >

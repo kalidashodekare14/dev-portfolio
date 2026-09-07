@@ -7,7 +7,7 @@ import { SiGithub } from "react-icons/si";
 
 const socialLinks = [
   { icon: <FaLinkedin className="w-5 h-5" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash", color: "#0A66C2" },
-  { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidash", color: "currentColor" },
+  { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidash", color: "#24292e" },
   { icon: <FaWhatsapp className="w-5 h-5" />, label: "WhatsApp", url: "https://wa.me/+8801728659562", color: "#25D366" },
   { icon: <Mail className="w-5 h-5" />, label: "Email", url: "mailto:kalidashodekare14@gmail.com", color: "#EA4335" },
 ];
