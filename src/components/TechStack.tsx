@@ -1,6 +1,6 @@
 "use client";
 
-import { Layers, Server, Wrench } from "lucide-react";
+import { Brain, BrainCircuit, Layers, Server, Wrench } from "lucide-react";
 import { BiLogoReact, BiLogoTypescript, BiLogoNodejs } from "react-icons/bi";
 import { FaAws } from "react-icons/fa";
 import {
@@ -20,6 +20,7 @@ import {
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 import { techStack } from "@/data/techstack";
+
 
 const categoryIcons: Record<string, React.ReactNode> = {
   Frontend: <Layers className="w-5 h-5 text-primary" />,
@@ -52,6 +53,8 @@ const skillMeta: Record<string, SkillMeta> = {
   "Linux": { icon: <SiLinux />, color: "#FCC624" },
   "VS Code": { icon: <VscVscode />, color: "#007ACC" },
   "shadcn/ui": { icon: <SiShadcnui />, color: "#F8FAFC" },
+  "OpenAI API": { icon: <Brain />, color: "#8A2BE2" },
+  "AI Agents": { icon: <BrainCircuit />, color: "#00F0FF" },
 };
 
 export default function TechStack() {

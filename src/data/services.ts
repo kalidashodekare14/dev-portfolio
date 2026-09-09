@@ -12,7 +12,7 @@ export const services: Service[] = [
   },
   {
     title: "Backend Development",
-    description: "Creating robust server-side applications with Node.js, Express, and Python FastAPI.",
+    description: "Creating robust server-side applications with Node.js, Express, and Nest.js",
     icon: "⚙️",
   },
   {
@@ -22,12 +22,12 @@ export const services: Service[] = [
   },
   {
     title: "API Development",
-    description: "Building RESTful and GraphQL APIs with proper authentication and documentation.",
+    description: "Building secure and efficient RESTful APIs with proper authentication, authorization, and API documentation.",
     icon: "🔌",
   },
   {
     title: "Cloud Deployment",
-    description: "Deploying and managing applications on AWS, Vercel, and Docker containers.",
+    description: "Deploying and managing applications using Vercel and Docker containers.",
     icon: "☁️",
   },
   {

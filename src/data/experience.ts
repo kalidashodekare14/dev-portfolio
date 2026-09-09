@@ -21,6 +21,6 @@ export const experience: ExperienceEntry[] = [
     ],
     employmentType: "Internship",
     location: "Remote (Jaipur, Rajasthan, India)",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "Nest.js", "PostgreSQL", "Prisma", "Docker", "Redis"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "RTK Query", "Node.js", "Express.js", "Nest.js", "PostgreSQL", "Prisma", "Docker", "Redis"],
   },
 ];

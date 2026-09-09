@@ -6,8 +6,8 @@ import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { SiGithub } from "react-icons/si";
 
 const socialLinks = [
-  { icon: <FaLinkedin className="w-5 h-5" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash", color: "#0A66C2" },
-  { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidash", color: "#24292e" },
+  { icon: <FaLinkedin className="w-5 h-5" />, label: "LinkedIn", url: "https://www.linkedin.com/in/kalidash-odekare-webdev/", color: "#0A66C2" },
+  { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidashodekare14", color: "#24292e" },
   { icon: <FaWhatsapp className="w-5 h-5" />, label: "WhatsApp", url: "https://wa.me/+8801728659562", color: "#25D366" },
   { icon: <Mail className="w-5 h-5" />, label: "Email", url: "mailto:kalidashodekare14@gmail.com", color: "#EA4335" },
 ];
@@ -23,8 +23,7 @@ export default function AboutMe() {
           </div>
 
           <p className="sr sr-delay-1 text-foreground/60 leading-relaxed">
-            I am a dedicated Full Stack Developer with a passion for creating efficient,
-            scalable, and user-friendly web applications. I bring ideas to life from concept to deployment.
+            I am a passionate Full Stack Developer currently expanding my expertise through hands-on internship experience. I specialize in building end-to-end web applications using Next.js, React, TypeScript, Node.js, and modern databases. With a strong foundation in designing clean user interfaces and architecting scalable backend systems, I bridge the gap between design and technical implementation. I thrive on solving complex problems and turning innovative ideas into functional, production-ready products.
           </p>
 
           <div className="sr sr-delay-2 flex flex-col gap-3">
@@ -40,7 +39,7 @@ export default function AboutMe() {
                 <Mail className="w-4 h-4 text-primary shrink-0" />
                 <div className="min-w-0">
                   <span className="text-foreground/60 text-xs">Email</span>
-                  <p className="text-foreground text-sm font-medium truncate">kalidashodekare14@gmail.com</p>
+                  <p className="text-foreground text-sm font-medium">kalidashodekare14@gmail.com</p>
                 </div>
               </div>
             </div>

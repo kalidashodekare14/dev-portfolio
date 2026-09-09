@@ -14,6 +14,7 @@ export const techStack: TechCategory[] = [
   },
   {
     title: "Tools",
-    skills: ["Git", "Docker", "AWS", "Vercel", "GitHub Actions", "Linux", "VS Code"],
+    skills: ["Git", "Docker", "Vercel", "GitHub Actions", "VS Code", "OpenAI API", "AI Agents"],
+    // skills: ["Git", "Docker", "AWS", "Vercel", "GitHub Actions", "Linux", "VS Code"],
   },
 ];

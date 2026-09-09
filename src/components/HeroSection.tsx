@@ -43,8 +43,7 @@ export default function HeroSection() {
         </p>
 
         <p className="sr sr-delay-3 text-lg text-foreground/60 max-w-2xl leading-relaxed">
-          Passionate about building end-to-end web applications with modern technologies.
-          I love turning complex problems into simple, elegant solutions.
+          Full Stack Developer crafting performant, end-to-end web applications with Next.js, Node.js, and TypeScript. Passionate about building modern UIs and scalable backend solutions.
         </p>
 
         <div className="sr sr-delay-4 flex flex-wrap justify-center gap-4 mt-6">
