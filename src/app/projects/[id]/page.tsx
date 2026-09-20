@@ -80,7 +80,7 @@ export default function ProjectDetail() {
       <div className="max-w-4xl mx-auto px-6 py-12">
         {/* Back Button */}
         <Link
-          href="/#projects"
+          href="/"
           className="back-btn mb-10 animate-section"
           style={{ animationDelay: "0.1s" }}
         >

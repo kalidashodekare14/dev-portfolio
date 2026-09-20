@@ -14,7 +14,7 @@ export default function Projects() {
       <div className="relative z-10 max-w-6xl mx-auto">
         <div className="sr text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Projects</span>
+            <span className="bg-linear-to-r from-foreground to-primary bg-clip-text text-transparent">Projects</span>
           </h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">A showcase of my recent work and personal projects.</p>
         </div>
@@ -25,8 +25,8 @@ export default function Projects() {
               key={project.id}
               className="group relative rounded-2xl bg-card border border-border hover:border-primary/40 overflow-hidden hover:-translate-y-2 transition-all duration-300 ease-out"
             >
-              <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-32 h-1 bg-gradient-to-r from-transparent via-primary to-transparent transition-all duration-300 ease-out"></div>
+              <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-0 group-hover:w-32 h-1 bg-linear-to-r from-transparent via-primary to-transparent transition-all duration-300 ease-out"></div>
 
               <Link href={`/projects/${project.id}`} className="block">
                 <div className="h-48 bg-muted relative overflow-hidden">

@@ -11,13 +11,13 @@ export default function Education() {
       <div className="relative z-10 max-w-4xl mx-auto">
         <div className="sr text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">Education</span>
+            <span className="bg-linear-to-r from-foreground to-primary bg-clip-text text-transparent">Education</span>
           </h2>
           <p className="text-foreground/60 max-w-2xl mx-auto">My academic journey and qualifications.</p>
         </div>
 
         <div className="relative">
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/30 to-primary/50"></div>
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-linear-to-b from-primary/50 via-primary/30 to-primary/50"></div>
 
           <div className="flex flex-col gap-12">
             {education.map((entry, index) => (
@@ -29,7 +29,7 @@ export default function Education() {
 
                 <div className={`flex-1 ml-16 md:ml-0 ${index % 2 === 0 ? "md:text-right" : "md:text-left"}`}>
                   <div className="group p-6 rounded-2xl bg-card border border-border hover:border-primary/40 hover:-translate-y-1 transition-all duration-300 inline-block relative overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                    <div className="absolute inset-0 bg-linear-to-b from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                     <div className="relative z-10">
                       <div className={`flex items-center gap-2 mb-2 ${index % 2 === 0 ? "md:justify-end" : ""}`}>
                         <Calendar className="w-4 h-4 text-primary" />

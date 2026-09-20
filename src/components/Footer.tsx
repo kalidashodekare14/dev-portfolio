@@ -10,10 +10,10 @@ const socialLinks = [
 export default function Footer() {
   return (
     <footer className="relative py-12 px-6 border-t border-border overflow-hidden">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-linear-to-r from-transparent via-primary/50 to-transparent"></div>
 
       <div className="sr relative z-10 max-w-6xl mx-auto flex flex-col items-center gap-6">
-        <button onClick={() => window.scrollTo({ top: 0 })} className="text-xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent hover:scale-110 transition-transform">
+        {/* <button onClick={() => window.scrollTo({ top: 0 })} className="text-xl font-bold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent hover:scale-110 transition-transform">
           Kalidash
         </button>
 
@@ -23,7 +23,7 @@ export default function Footer() {
               {link.icon}{link.label}
             </a>
           ))}
-        </div>
+        </div> */}
 
         <p className="text-foreground/60 text-sm">
           © {new Date().getFullYear()} Kalidash Odekare. All rights reserved.
