@@ -52,7 +52,7 @@ const skillMeta: Record<string, SkillMeta> = {
   "GitHub Actions": { icon: <SiGithub />, useThemeColor: true },
   "Linux": { icon: <SiLinux />, color: "#FCC624" },
   "VS Code": { icon: <VscVscode />, color: "#007ACC" },
-  "shadcn/ui": { icon: <SiShadcnui />, color: "#F8FAFC" },
+  "shadcn/ui": { icon: <SiShadcnui />, useThemeColor: true },
   "OpenAI API": { icon: <Brain />, color: "#8A2BE2" },
   "AI Agents": { icon: <BrainCircuit />, color: "#00F0FF" },
 };

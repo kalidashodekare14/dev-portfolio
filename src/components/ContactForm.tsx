@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { Send, Mail, Phone, MapPin, CheckCircle, AlertCircle } from "lucide-react";
 import { FaWhatsapp, FaLinkedin } from "react-icons/fa";
 import { SiGithub } from "react-icons/si";
+import { useTheme } from "@/lib/ThemeProvider";
 
 const contactInfo = [
   { icon: <Mail className="w-5 h-5 text-primary" />, label: "Email", value: "kalidashodekare14@gmail.com" },
@@ -11,14 +12,15 @@ const contactInfo = [
   { icon: <MapPin className="w-5 h-5 text-primary" />, label: "Location", value: "Dinajpur, Bangladesh" },
 ];
 
-const socialLinks = [
-  { icon: <FaLinkedin className="w-5 h-5" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash", color: "#0A66C2" },
-  { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidash", color: "#B2B2B2" },
-  { icon: <FaWhatsapp className="w-5 h-5" />, label: "WhatsApp", url: "https://wa.me/+8801728659562", color: "#25D366" },
-  { icon: <Mail className="w-5 h-5" />, label: "Email", url: "mailto:kalidashodekare14@gmail.com", color: "#EA4335" },
-];
-
 export default function ContactForm() {
+  const { theme } = useTheme();
+
+  const socialLinks = [
+    { icon: <FaLinkedin className="w-5 h-5" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash", color: "#0A66C2" },
+    { icon: <SiGithub className="w-5 h-5" />, label: "GitHub", url: "https://github.com/kalidash", color: theme === "dark" ? "#B2B2B2" : "#333333" },
+    { icon: <FaWhatsapp className="w-5 h-5" />, label: "WhatsApp", url: "https://wa.me/+8801728659562", color: "#25D366" },
+    { icon: <Mail className="w-5 h-5" />, label: "Email", url: "mailto:kalidashodekare14@gmail.com", color: "#EA4335" },
+  ];
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");

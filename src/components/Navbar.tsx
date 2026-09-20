@@ -36,7 +36,7 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/70 backdrop-blur-xl border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <button onClick={() => handleNav("home")} className="text-xl font-bold bg-linear-to-r from-primary to-purple-400 bg-clip-text text-transparent">
+        <button onClick={() => handleNav("home")} className={`text-xl font-bold bg-linear-to-r ${theme === "dark" ? "from-white" : "from-foreground"} to-primary bg-clip-text text-transparent`}>
           Kalidash
         </button>
 
@@ -46,7 +46,7 @@ export default function Navbar() {
               <button
                 onClick={() => handleNav(link.target)}
                 className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${active === link.target
-                    ? "bg-primary/25 text-primary"
+                    ? `bg-primary/25 ${theme === "dark" ? "text-indigo-300" : "text-indigo-500"}`
                     : "text-foreground/70 hover:text-foreground hover:bg-foreground/10"
                   }`}
               >
@@ -98,7 +98,7 @@ export default function Navbar() {
                 <button
                   onClick={() => handleNav(link.target)}
                   className={`w-full px-6 py-2.5 rounded-full text-sm font-medium transition-all ${active === link.target
-                      ? "bg-primary/20 text-primary"
+                      ? `bg-primary/20 ${theme === "dark" ? "text-indigo-300" : "text-indigo-500"}`
                       : "text-foreground/70 hover:text-foreground hover:bg-foreground/10"
                     }`}
                 >

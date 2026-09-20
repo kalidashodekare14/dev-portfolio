@@ -2,17 +2,20 @@
 
 import { Briefcase, Download } from "lucide-react";
 import { BiLogoNodejs, BiLogoReact, BiLogoTypescript } from "react-icons/bi";
-import { SiNestjs, SiNextdotjs } from "react-icons/si";
-
-const techIcons = [
-  { name: "TypeScript", icon: <BiLogoTypescript />, color: "#3178C6" },
-  { name: "React", icon: <BiLogoReact />, color: "#61DAFB" },
-  { name: "Next.js", icon: <SiNextdotjs />, color: "#ffffff" },
-  { name: "Node.js", icon: <BiLogoNodejs />, color: "#339933" },
-  { name: "Nest.js", icon: <SiNestjs />, color: "#E0234E" },
-];
+import { SiNestjs, SiNextdotjs, SiExpress } from "react-icons/si";
+import { useTheme } from "@/lib/ThemeProvider";
 
 export default function HeroSection() {
+  const { theme } = useTheme();
+
+  const techIcons = [
+    { name: "TypeScript", icon: <BiLogoTypescript />, color: "#3178C6" },
+    { name: "React", icon: <BiLogoReact />, color: "#61DAFB" },
+    { name: "Next.js", icon: <SiNextdotjs />, color: theme === "dark" ? "#ffffff" : "#000000" },
+    { name: "Node.js", icon: <BiLogoNodejs />, color: "#339933" },
+    { name: "Nest.js", icon: <SiNestjs />, color: "#E0234E" },
+    { name: "Express.js", icon: <SiExpress />, color: theme === "dark" ? "#ffffff" : "#000000" },
+  ];
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-20 overflow-hidden">
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
