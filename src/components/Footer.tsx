@@ -3,8 +3,8 @@
 import { GitFork, Link2 } from "lucide-react";
 
 const socialLinks = [
-  { icon: <GitFork className="w-4 h-4" />, label: "GitHub", url: "https://github.com/kalidash" },
-  { icon: <Link2 className="w-4 h-4" />, label: "LinkedIn", url: "https://linkedin.com/in/kalidash" },
+  { icon: <GitFork className="w-4 h-4" />, label: "GitHub", url: "https://github.com/kalidashodekare14" },
+  { icon: <Link2 className="w-4 h-4" />, label: "LinkedIn", url: "https://www.linkedin.com/in/kalidash-odekare-webdev" },
 ];
 
 export default function Footer() {
