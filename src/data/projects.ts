@@ -1,3 +1,9 @@
+export interface ProjectRepo {
+  /** Short label shown on the source button, e.g. "Frontend" or "Backend". */
+  label: string;
+  url: string;
+}
+
 export interface Project {
   id: string;
   title: string;
@@ -9,7 +15,8 @@ export interface Project {
   gallery?: string[];
   tags: string[];
   features: string[];
-  github?: string;
+  /** Source repositories. First entry is the primary (frontend) repo. */
+  repos?: ProjectRepo[];
   live?: string;
   challenges?: { challenge: string; solution: string }[];
   demoCredentials?: { label: string; value: string }[];
@@ -41,7 +48,16 @@ export const projects: Project[] = [
       "Implemented secure authentication with protected routes and role-based permissions to ensure platform security and data privacy.",
       "Integrated REST APIs for authentication, donation management, request handling, and real-time data communication between frontend and backend systems.",
     ],
-    github: "https://github.com/kalidashodekare14/HelpLink_Frontend",
+    repos: [
+      {
+        label: "Frontend",
+        url: "https://github.com/kalidashodekare14/HelpLink_Frontend",
+      },
+      {
+        label: "Backend",
+        url: "https://github.com/kalidashodekare14/HelpLink_Backend",
+      },
+    ],
     live: "https://helplink-frontend.vercel.app",
     challenges: [
       {
@@ -102,7 +118,16 @@ export const projects: Project[] = [
       "Integrated REST API for dynamic pet data and managed state with TanStack Query",
       "Collaborated with team using Git and GitHub for feature development",
     ],
-    github: "https://github.com/Mehedi86/adoptly-team-project",
+    repos: [
+      {
+        label: "Frontend",
+        url: "https://github.com/Mehedi86/adoptly-team-project",
+      },
+      {
+        label: "Backend",
+        url: "https://github.com/Mehedi86/adoptly-team-project-backend",
+      },
+    ],
     live: "https://adoptly-team-project.vercel.app",
     challenges: [
       {
@@ -154,7 +179,12 @@ export const projects: Project[] = [
       "Patients can easily find and select a doctor by filtering based on doctor name, department, and specialization to receive the care they need.",
       "Patients can easily book doctor appointments online without any hassle, make payments if required, and receive doctor consultations and treatments.",
     ],
-    github: "https://github.com/kalidashodekare14/HealthCare",
+    repos: [
+      {
+        label: "Frontend",
+        url: "https://github.com/kalidashodekare14/HealthCare",
+      },
+    ],
     live: "https://health-care14.vercel.app/",
     challenges: [
       {

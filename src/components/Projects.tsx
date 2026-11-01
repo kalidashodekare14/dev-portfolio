@@ -74,17 +74,20 @@ export default function Projects() {
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   )}
-                  {project.github && (
+                  {project.repos?.map((repo) => (
                     <a
-                      href={project.github}
+                      key={repo.url}
+                      href={repo.url}
                       target="_blank"
                       rel="noopener noreferrer"
                       onClick={(e) => e.stopPropagation()}
+                      title={`${repo.label} repository`}
+                      aria-label={`${repo.label} repository`}
                       className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
                     >
                       <SiGithub className="w-4 h-4" />
                     </a>
-                  )}
+                  ))}
                 </div>
               </div>
             </div>

@@ -87,17 +87,20 @@ export default function ProjectDetail() {
           className="flex flex-wrap gap-4 mb-12 animate-section"
           style={{ animationDelay: "0.2s" }}
         >
-          {project.github && (
+          {project.repos?.map((repo) => (
             <a
-              href={project.github}
+              key={repo.url}
+              href={repo.url}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-github"
             >
               <SiGithub className="w-5 h-5" />
-              View Source Code
+              {(project.repos?.length ?? 0) > 1
+                ? `View ${repo.label} Code`
+                : "View Source Code"}
             </a>
-          )}
+          ))}
           {project.live && (
             <a
               href={project.live}
