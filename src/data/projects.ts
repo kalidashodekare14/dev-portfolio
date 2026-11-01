@@ -2,6 +2,7 @@ export interface ProjectRepo {
   /** Short label shown on the source button, e.g. "Frontend" or "Backend". */
   label: string;
   url: string;
+  isPrivate?: boolean;
 }
 
 export interface Project {
@@ -27,6 +28,98 @@ export interface Project {
 }
 
 export const projects: Project[] = [
+   {
+    id: "quantiquen",
+    title: "Quantiquen",
+    subtitle: "Security Decision Intelligence (SDI) platform",
+    shortDescription: "A platform connecting volunteers with people in need of assistance during disasters.",
+    fullDescription:
+      "Every year, during winter, floods and cyclones in Bangladesh, underprivileged people suffer. Many donors want to help but do not know who to help. This project is a MERN Stack web platform that connects donors, receivers, volunteers and admin to ensure timely relief distribution.",
+    image: "/projects/quantiquen.webp",
+    gallery: [
+      "/images/gallery/quantiquen/quantiquen.webp",
+      "/images/gallery/quantiquen/quantiquen2.webp",
+      "/images/gallery/quantiquen/quantiquen3.webp",
+      "/images/gallery/quantiquen/quantiquen4.webp",
+      "/images/gallery/quantiquen/quantiquen5.webp",
+      "/images/gallery/quantiquen/quantiquen6.webp",
+      "/images/gallery/quantiquen/quantiquen7.webp",
+      "/images/gallery/quantiquen/quantiquen8.webp",
+      "/images/gallery/quantiquen/quantiquen9.webp",
+      "/images/gallery/quantiquen/quantiquen10.webp",
+      "/images/gallery/quantiquen/quantiquen11.webp",
+      "/images/gallery/quantiquen/quantiquen12.webp",
+      "/images/gallery/quantiquen/quantiquen13.webp",
+      "/images/gallery/quantiquen/quantiquen14.webp",
+      "/images/gallery/quantiquen/quantiquen15.webp",
+      "/images/gallery/quantiquen/quantiquen16.webp",
+    ],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "ChadCN", "Node.js", "Express.js", "Nest.js","Redis (BullMQ)", "Docker", "PostgreSQL (Prisma ORM)"],
+    features: [
+      "Receivers can post their issues and donors can easily view these requests and provide assistance through donations, ensuring a transparent and efficient support system.",
+      "The platform uses AI to analyze request titles and determine emergency levels automatically. Highly urgent requests can be instantly prioritized or auto-approved to accelerate relief distribution during critical situations.",
+      "ntegrated an AI-powered chatbot to provide instant support and guidance for users. The chatbot helps users navigate the platform, answer common questions, provide emergency assistance information, and improve overall user experience during disaster situations.",
+      "Implemented secure authentication with protected routes and role-based permissions to ensure platform security and data privacy.",
+      "Integrated REST APIs for authentication, donation management, request handling, and real-time data communication between frontend and backend systems.",
+    ],
+    repos: [
+      {
+        label: "Frontend",
+        url: "https://github.com/kalidashodekare14/HelpLink_Frontend",
+        isPrivate: true,
+      },
+      {
+        label: "Backend",
+        url: "https://github.com/kalidashodekare14/quantiqen-backend",
+        isPrivate: true,
+      },
+      {
+        label: "Auth Backend",
+        url: "https://github.com/kalidashodekare14/quantiqen-identity",
+        isPrivate: true,
+      },
+    ],
+    live: "https://quantiqen.vercel.app",
+    challenges: [
+      {
+        challenge: "During critical disasters, manually screening hundreds of help requests created bottlenecks, significantly delaying immediate relief to high-risk victims.",
+        solution: "Integrated an AI-powered text analysis model to evaluate request titles, extract severity indicators, and automatically calculate urgency scores for instant prioritization or auto-approval.",
+      },
+      {
+        challenge: "Managing four distinct user roles (Receiver, Donor, Volunteer, Admin) created security risks regarding unauthorized data access, privilege escalation, and data mutation (e.g., users altering other users' requests).",
+        solution: "Implemented JWT authentication with route guard middlewares, enforcing strict role-based authorization rules across both client-side routes and backend REST API endpoints.",
+      },
+      {
+        challenge: "High user traffic during crisis situations led to repetitive inquiry support tickets and reduced platform usability for stressed users needing urgent help.",
+        solution: "Built and embedded an AI-powered assistant to deliver real-time platform navigation, automated FAQs, and step-by-step guidance for emergency processes.",
+      },
+      {
+        challenge: "Fetching and synchronizing dynamic updates across multiple unique dashboards created unnecessary payload overhead and slow response times under high-frequency updates.",
+        solution: "Structured optimized RESTful API endpoints with pagination, precise payload scoping, and centralized state management to handle dynamic status changes smoothly.",
+      },
+    ],
+    demoCredentials: [
+      { label: "Email", value: "demo@helplink.com" },
+      { label: "Password", value: "helplink123" },
+    ],
+    technicalHighlights: [
+      "Designed type-safe UI components using Next.js, TypeScript, and Tailwind CSS to ensure high performance and fully responsive layouts.",
+      "Managed complex asynchronous states and form validations seamlessly using RTK Query and React Hook Form.",
+      "Built scalable REST APIs with Node.js, Express.js, and MongoDB, using Mongoose for efficient schema modeling and data access.",
+      "Integrated OpenAI API for intelligent features and secured the application using JWT and NextAuth for robust role-based access.",
+    ],
+    // achievements: [
+    //   "Connected 500+ volunteers with disaster-affected communities",
+    //   "Reduced response time by 60% compared to traditional methods",
+    //   "Featured in local tech community showcase",
+    // ],
+    // futureEnhancements: [
+    //   "AI-powered volunteer-task matching optimization",
+    //   "Mobile app development with React Native",
+    //   "Integration with government disaster management APIs",
+    //   "Multi-language support for broader accessibility",
+    // ],
+  },
   {
     id: "helplink",
     title: "HelpLink",

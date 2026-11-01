@@ -19,6 +19,7 @@ import {
   Target,
   Wrench,
   Trophy,
+  Lock,
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { projects } from "@/data/projects";
@@ -52,7 +53,7 @@ export default function ProjectDetail() {
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
-        <div className="relative h-[45vh] min-h-[240px] overflow-hidden rounded-2xl border border-border bg-muted md:h-[64vh]">
+        <div className="relative h-[45vh] min-h-60 overflow-hidden rounded-2xl border border-border bg-muted md:h-[70vh]">
           <ProjectHeroCarousel
             images={project.gallery ?? [project.image]}
             title={project.title}
@@ -87,20 +88,33 @@ export default function ProjectDetail() {
           className="flex flex-wrap gap-4 mb-12 animate-section"
           style={{ animationDelay: "0.2s" }}
         >
-          {project.repos?.map((repo) => (
-            <a
-              key={repo.url}
-              href={repo.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-github"
-            >
-              <SiGithub className="w-5 h-5" />
-              {(project.repos?.length ?? 0) > 1
-                ? `View ${repo.label} Code`
-                : "View Source Code"}
-            </a>
-          ))}
+          {project.repos?.map((repo) =>
+            repo.isPrivate ? (
+              <div
+                key={repo.label}
+                title={`${repo.label} repository is private`}
+                className="btn-github opacity-60 cursor-not-allowed bg-muted border-border text-foreground/50 pointer-events-none"
+              >
+                <Lock className="w-5 h-5" />
+                {((project.repos?.length ?? 0) > 1
+                  ? `${repo.label} Code (Private)`
+                  : "Source Code (Private)")}
+              </div>
+            ) : (
+              <a
+                key={repo.url}
+                href={repo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-github"
+              >
+                <SiGithub className="w-5 h-5" />
+                {(project.repos?.length ?? 0) > 1
+                  ? `View ${repo.label} Code`
+                  : "View Source Code"}
+              </a>
+            )
+          )}
           {project.live && (
             <a
               href={project.live}
