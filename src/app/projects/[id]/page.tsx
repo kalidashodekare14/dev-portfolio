@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useParams } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowLeft,
@@ -23,6 +22,7 @@ import {
 } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { projects } from "@/data/projects";
+import ProjectHeroCarousel from "@/components/ProjectHeroCarousel";
 
 export default function ProjectDetail() {
   const params = useParams();
@@ -51,28 +51,12 @@ export default function ProjectDetail() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <div className="relative h-[50vh] md:h-[60vh] overflow-hidden">
-        <div className="absolute inset-0 animate-hero">
-          <Image
-            src={project.image}
-            alt={project.title}
-            fill
-            className="object-cover"
-            priority
+      <div className="mx-auto max-w-6xl px-4 pt-6 sm:px-6">
+        <div className="relative h-[45vh] min-h-[240px] overflow-hidden rounded-2xl border border-border bg-muted md:h-[64vh]">
+          <ProjectHeroCarousel
+            images={project.gallery ?? [project.image]}
+            title={project.title}
           />
-        </div>
-        <div className="absolute inset-0 project-hero-overlay" />
-        <div className="absolute inset-0 flex items-end">
-          <div className="max-w-4xl mx-auto px-6 pb-10 w-full">
-            <div className="animate-section">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 drop-shadow-lg">
-                {project.title}
-              </h1>
-              <p className="text-lg md:text-xl text-white/80 font-medium">
-                {project.subtitle}
-              </p>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -87,6 +71,16 @@ export default function ProjectDetail() {
           <ArrowLeft className="w-4 h-4" />
           Back to Projects
         </Link>
+
+        {/* Project Title */}
+        <div className="mb-8 animate-section" style={{ animationDelay: "0.15s" }}>
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">
+            {project.title}
+          </h1>
+          <p className="text-lg md:text-xl text-foreground/60 font-medium">
+            {project.subtitle}
+          </p>
+        </div>
 
         {/* Action Buttons */}
         <div

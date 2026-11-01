@@ -5,6 +5,8 @@ export interface Project {
   shortDescription: string;
   fullDescription: string;
   image: string;
+  /** Screenshots used by the project detail page header carousel. */
+  gallery?: string[];
   tags: string[];
   features: string[];
   github?: string;
@@ -26,6 +28,11 @@ export const projects: Project[] = [
     fullDescription:
       "Every year, during winter, floods and cyclones in Bangladesh, underprivileged people suffer. Many donors want to help but do not know who to help. This project is a MERN Stack web platform that connects donors, receivers, volunteers and admin to ensure timely relief distribution.",
     image: "/projects/helplink.webp",
+    gallery: [
+      "/images/gallery/helplink/1.webp",
+      "/images/gallery/helplink/2.webp",
+      "/images/gallery/helplink/3.webp",
+    ],
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     features: [
       "Receivers can post their issues and donors can easily view these requests and provide assistance through donations, ensuring a transparent and efficient support system.",
@@ -84,6 +91,11 @@ export const projects: Project[] = [
     fullDescription:
       "Adoply is a comprehensive pet adoption platform that connects shelters with potential adopters. It features detailed pet profiles, adoption application tracking, and a seamless communication system between shelters and adopters.",
     image: "/projects/adoply.webp",
+    gallery: [
+      "/images/gallery/adoply/1.webp",
+      "/images/gallery/adoply/2.webp",
+      "/images/gallery/adoply/3.webp",
+    ],
     tags: ["Next.js","Tailwind CSS", "TanStack Query", "Firebase", "Node.js", "Express.js", "MongoDB"],
     features: [
       "Built responsive Home, Pet Listing, and Pet Details pages with reusable components.",
@@ -132,6 +144,11 @@ export const projects: Project[] = [
     fullDescription:
       "The Healthcare project is designed for patients. Here, you can easily book doctor appointments online without any hassle, make payments if required, and receive doctor consultations and treatments. Patients can view their booked appointments, and there is a dashboard that the admin can control.",
     image: "/projects/healthcare.webp",
+    gallery: [
+      "/images/gallery/healthcare/1.webp",
+      "/images/gallery/healthcare/2.webp",
+      "/images/gallery/healthcare/3.webp",
+    ],
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Express.js", "MongoDB"],
     features: [
       "Patients can easily find and select a doctor by filtering based on doctor name, department, and specialization to receive the care they need.",

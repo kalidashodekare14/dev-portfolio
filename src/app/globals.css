@@ -184,27 +184,6 @@ body {
    PROJECT DETAIL PAGE STYLES
    ============================================ */
 
-/* Hero gradient overlay */
-.project-hero-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(3, 0, 20, 0.95) 0%,
-    rgba(3, 0, 20, 0.7) 40%,
-    rgba(3, 0, 20, 0.3) 70%,
-    transparent 100%
-);
-}
-
-.light .project-hero-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(255, 255, 255, 0.95) 0%,
-    rgba(255, 255, 255, 0.7) 40%,
-    rgba(255, 255, 255, 0.3) 70%,
-    transparent 100%
-  );
-}
-
 /* Glass morphism card */
 .project-section-card {
   background: rgba(255, 255, 255, 0.02);
@@ -464,4 +443,85 @@ body {
 
 .animate-slide {
   animation: slide-in-left 0.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ============================================
+   PROJECT DETAIL HERO CAROUSEL (Swiper)
+   ============================================ */
+
+.project-hero-swiper {
+  --swiper-navigation-color: #ffffff;
+  --swiper-navigation-size: 18px;
+  --swiper-navigation-sides-offset: 16px;
+  --swiper-pagination-color: #ffffff;
+  --swiper-pagination-bullet-inactive-color: #ffffff;
+  --swiper-pagination-bullet-inactive-opacity: 0.45;
+  --swiper-pagination-bullet-opacity: 1;
+  --swiper-pagination-bullet-size: 8px;
+  --swiper-pagination-bullet-horizontal-gap: 5px;
+  --swiper-pagination-bottom: 16px;
+}
+
+.project-hero-swiper .swiper-button-prev,
+.project-hero-swiper .swiper-button-next {
+  width: 42px;
+  height: 42px;
+  border-radius: 9999px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: #ffffff;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.project-hero-swiper .swiper-button-prev:hover,
+.project-hero-swiper .swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: scale(1.06);
+}
+
+.project-hero-swiper .swiper-button-prev:active,
+.project-hero-swiper .swiper-button-next:active {
+  transform: scale(0.96);
+}
+
+.project-hero-swiper .swiper-button-prev svg,
+.project-hero-swiper .swiper-button-next svg {
+  width: 11px;
+  height: 20px;
+}
+
+.project-hero-swiper .swiper-pagination-bullet {
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.project-hero-swiper .swiper-pagination-bullet-active {
+  width: 22px;
+  border-radius: 9999px;
+  opacity: 1;
+}
+
+@media (max-width: 639px) {
+  .project-hero-swiper .swiper-button-prev,
+  .project-hero-swiper .swiper-button-next {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-hero-swiper .swiper-wrapper {
+    transition-duration: 0ms !important;
+  }
+
+  .project-hero-swiper .swiper-button-prev,
+  .project-hero-swiper .swiper-button-next,
+  .project-hero-swiper .swiper-pagination-bullet {
+    transition: none;
+  }
 }
