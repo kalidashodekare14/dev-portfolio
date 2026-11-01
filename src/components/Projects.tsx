@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, Folder } from "lucide-react";
+import { ExternalLink, Folder, Lock } from "lucide-react";
 import { SiGithub } from "react-icons/si";
 import { projects } from "@/data/projects";
 
@@ -56,7 +56,7 @@ export default function Projects() {
                   ))}
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-3">
                   <Link
                     href={`/projects/${project.id}`}
                     className="flex items-center gap-2 px-6 py-2.5 rounded-full bg-primary text-primary-foreground text-sm font-medium hover:opacity-90 transition-all duration-300"
@@ -74,20 +74,32 @@ export default function Projects() {
                       <ExternalLink className="w-4 h-4" />
                     </a>
                   )}
-                  {project.repos?.map((repo) => (
-                    <a
-                      key={repo.url}
-                      href={repo.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      onClick={(e) => e.stopPropagation()}
-                      title={`${repo.label} repository`}
-                      aria-label={`${repo.label} repository`}
-                      className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
-                    >
-                      <SiGithub className="w-4 h-4" />
-                    </a>
-                  ))}
+                  {project.repos?.map((repo) =>
+                    repo.isPrivate ? (
+                      <div
+                        key={repo.label}
+                        title={`${repo.label} repository is private`}
+                        aria-label={`${repo.label} repository is private`}
+                        onClick={(e) => e.stopPropagation()}
+                        className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/40 cursor-not-allowed select-none"
+                      >
+                        <Lock className="w-4 h-4" />
+                      </div>
+                    ) : (
+                      <a
+                        key={repo.url}
+                        href={repo.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        title={`${repo.label} repository`}
+                        aria-label={`${repo.label} repository`}
+                        className="w-9 h-9 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center text-foreground/60 hover:text-foreground hover:bg-primary/20 hover:border-primary/40 hover:scale-110 transition-all duration-300"
+                      >
+                        <SiGithub className="w-4 h-4" />
+                      </a>
+                    )
+                  )}
                 </div>
               </div>
             </div>
