@@ -37,7 +37,7 @@ export default function HeroSection() {
           ))}
         </div>
 
-        <h1 className="sr sr-delay-1 text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-foreground">
+        <h1 className="sr sr-delay-1 text-5xl md:text-7xl lg:text-7xl font-bold tracking-tight text-foreground">
           Kalidash Odekare
         </h1>
 

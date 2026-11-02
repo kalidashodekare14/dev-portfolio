@@ -188,8 +188,8 @@ export default function ProjectDetail() {
               {project.challenges.map((item, index) => (
                 <div key={index} className="challenge-card">
                   <div className="flex items-start gap-3 mb-3">
-                    <span className="text-amber-500 font-semibold text-xs uppercase tracking-wider">
-                      Challenge
+                    <span className="text-amber-500 font-semibold text-[14px] uppercase tracking-wider">
+                      Challenge <span className="text-foreground">{item?.title}</span>
                     </span>
                   </div>
                   <p className="text-foreground/70 text-[15px] mb-4 pl-0">
