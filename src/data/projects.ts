@@ -28,139 +28,139 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    id: "quantiquen",
-    title: "Quantiquen",
-    subtitle: "Security Decision Intelligence (SDI) platform",
-    shortDescription:
-      "QUANTIQEN is a Security Decision Intelligence platform that turns raw security data into actionable risks and smart decisions using a Zero Trust, multi-tenant architecture.",
-    fullDescription:
-      "QUANTIQEN is an advanced Security Decision Intelligence (SDI) platform designed to elevate standard cybersecurity practices. Rather than acting as a traditional SIEM, EDR, vulnerability scanner, or generic AI chatbot, QUANTIQEN serves as an intelligent decision-making layer that ingests raw, complex security data and translates it into prioritized risks and clear, actionable insights. Engineered with an enterprise-ready architecture, the platform natively supports multi-tenancy, centralized authentication, dynamic authorization, risk-based step-up authentication, and a Zero Trust API Security Gateway to ensure every access point remains secure.",
-    image: "/projects/quantiquen.webp",
-    gallery: [
-      "/images/gallery/quantiquen/quantiquen.webp",
-      "/images/gallery/quantiquen/quantiquen2.webp",
-      "/images/gallery/quantiquen/quantiquen3.webp",
-      "/images/gallery/quantiquen/quantiquen4.webp",
-      "/images/gallery/quantiquen/quantiquen5.webp",
-      "/images/gallery/quantiquen/quantiquen6.webp",
-      "/images/gallery/quantiquen/quantiquen7.webp",
-      "/images/gallery/quantiquen/quantiquen8.webp",
-      "/images/gallery/quantiquen/quantiquen9.webp",
-      "/images/gallery/quantiquen/quantiquen10.webp",
-      "/images/gallery/quantiquen/quantiquen11.webp",
-      "/images/gallery/quantiquen/quantiquen12.webp",
-      "/images/gallery/quantiquen/quantiquen13.webp",
-      "/images/gallery/quantiquen/quantiquen14.webp",
-      "/images/gallery/quantiquen/quantiquen15.webp",
-      "/images/gallery/quantiquen/quantiquen16.webp",
-    ],
-    tags: [
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "ChadCN",
-      "Node.js",
-      "Express.js",
-      "Nest.js",
-      "Redis (BullMQ)",
-      "Docker",
-      "PostgreSQL (Prisma ORM)",
-    ],
-    features: [
-      "Security Decision Intelligence Engine: Pulls raw security telemetry across your organization, runs it through context and risk analysis, and converts it into human-approved decisions and recommendations—taking you straight from raw data to actionable outcomes.",
-      "Multi-Tenant Architecture: Keeps data completely separate and secure for different clients, teams, or departments using the same system.",
-      "Enterprise Identity & Access Control: Uses strong authentication and fine-grained role permissions (RBAC) so users only see and access what they are supposed to.",
-      "Risk-Based Step-Up Authentication: Continuously checks user behavior and location in real time, automatically triggering extra security steps if an action looks suspicious or high-risk.",
-      "Zero Trust API Security Gateway: Follows a strict never trust, always verify rule, checking and validating every single API request to block unauthorized access and prevent data leaks.",
-    ],
-    repos: [
-      {
-        label: "Frontend",
-        url: "https://github.com/kalidashodekare14/HelpLink_Frontend",
-        isPrivate: true,
-      },
-      {
-        label: "Backend",
-        url: "https://github.com/kalidashodekare14/quantiqen-backend",
-        isPrivate: true,
-      },
-      {
-        label: "Auth Backend",
-        url: "https://github.com/kalidashodekare14/quantiqen-identity",
-        isPrivate: true,
-      },
-    ],
-    live: "https://quantiqen.vercel.app",
-    challenges: [
-      {
-        title: "Strict Multi-Tenant Data Isolation",
-        challenge:
-          "Hosting multiple organizations on a single backend creates a severe risk of accidental data leaks if application-level filters fail.",
-        solution:
-          "Enforced PostgreSQL Row-Level Security (RLS) directly at the database layer. This guarantees complete data isolation between tenants, ensuring data remains secure even if a backend query drops a filter by mistake",
-      },
-      {
-        title: "Heavy Event Traffic & System Latency",
-        challenge:
-          "Processing massive streams of real-time security telemetry simultaneously can overload the core server and degrade API performance.",
-        solution:
-          "Architected an asynchronous event processing pipeline using Redis and BullMQ. This offloads heavy background workloads, keeping the main API fast, responsive, and resilient.",
-      },
-      {
-        title: "Token Theft & Session Hijacking",
-        challenge:
-          "Static session management leaves the platform vulnerable to token reuse and unauthorized access.",
-        solution:
-          "Implemented opaque refresh tokens paired with an atomic Redis rotation script. If a stolen token is reused, the system instantly detects the anomaly and revokes the entire session family to secure the user.",
-      },
-      {
-        title: "Unreliable AI Risk Scores & Hallucinations",
-        challenge:
-          "Relying purely on AI models for risk assessment can lead to inconsistent scoring and false positives.",
-        solution:
-          "Separated risk scoring from AI analysis using a deterministic policy engine and fixed mathematical formulas. The AI engine is restricted to generating natural-language summaries, while exact policy rules handle the core scoring.",
-      },
-      {
-        title: "Automated Bot Attacks & Password Spraying",
-        challenge:
-          "High-frequency credential stuffing and bot traffic can flood database resources and compromise user credentials.",
-        solution:
-          "Deployed Turnstile CAPTCHA upfront and enforced strict per-IP and per-ASN rate limiting in Redis to block malicious traffic before it touches the database.",
-      },
-      {
-        title: "Securing API Access in High-Risk Scenarios",
-        challenge:
-          "Basic password checks and static API keys fail to protect sensitive endpoints during suspicious user activity.",
-        solution:
-          "Built a Zero Trust API Security Gateway backed by EdDSA Cryptographic Verification and Risk-Based Step-Up Auth. It continuously evaluates incoming requests and triggers extra multi-factor verification whenever an action appears risky.",
-      },
-    ],
-    demoCredentials: [
-      { label: "Organization ID", value: "QTN-ORG-VNEFV0A" },
-      { label: "User ID", value: "sumon_amazon" },
-      { label: "Password", value: "SumonRoy00@#" },
-    ],
-    technicalHighlights: [
-      "Database-Level Multi-Tenancy: Protected customer data using PostgreSQL Row-Level Security (RLS). This ensures complete tenant isolation at the database layer, keeping data safe even if an application-level filter fails.",
-      "Asynchronous Event Processing: Handled heavy streams of real-time security telemetry smoothly using Redis and BullMQ background workers, preventing any lag on the core API server.",
-      "Zero Trust & Cryptographic Security: Built a Zero Trust API Security Gateway powered by EdDSA cryptographic verification and Risk-Based Step-Up Authentication to continuously validate incoming requests.",
-      "Secure Session Management & Theft Protection: Managed opaque refresh tokens with an atomic Redis rotation script. If a stolen token is reused, the system instantly catches it and revokes the entire session family.",
-      "Deterministic Risk Scoring (AI Decoupling): Separated AI analysis from actual scoring by using a deterministic policy engine and fixed formulas. The AI only provides natural-language summaries, ensuring risk scores are always reliable and never hallucinated.",
-      "Advanced Bot & Rate-Limit Defense: Blocked automated bot traffic and password spraying upfront using Turnstile CAPTCHA and strict per-IP and per-ASN rate limiting in Redis before requests ever hit the database.",
-    ],
-    // achievements: [
-    //   "Connected 500+ volunteers with disaster-affected communities",
-    //   "Reduced response time by 60% compared to traditional methods",
-    //   "Featured in local tech community showcase",
-    // ],
-    // futureEnhancements: [
-    //   "AI-powered volunteer-task matching optimization",
-    //   "Mobile app development with React Native",
-    //   "Integration with government disaster management APIs",
-    //   "Multi-language support for broader accessibility",
-    // ],
-  },
+  // {
+  //   id: "quantiquen",
+  //   title: "Quantiquen",
+  //   subtitle: "Security Decision Intelligence (SDI) platform",
+  //   shortDescription:
+  //     "QUANTIQEN is a Security Decision Intelligence platform that turns raw security data into actionable risks and smart decisions using a Zero Trust, multi-tenant architecture.",
+  //   fullDescription:
+  //     "QUANTIQEN is an advanced Security Decision Intelligence (SDI) platform designed to elevate standard cybersecurity practices. Rather than acting as a traditional SIEM, EDR, vulnerability scanner, or generic AI chatbot, QUANTIQEN serves as an intelligent decision-making layer that ingests raw, complex security data and translates it into prioritized risks and clear, actionable insights. Engineered with an enterprise-ready architecture, the platform natively supports multi-tenancy, centralized authentication, dynamic authorization, risk-based step-up authentication, and a Zero Trust API Security Gateway to ensure every access point remains secure.",
+  //   image: "/projects/quantiquen.webp",
+  //   gallery: [
+  //     "/images/gallery/quantiquen/quantiquen.webp",
+  //     "/images/gallery/quantiquen/quantiquen2.webp",
+  //     "/images/gallery/quantiquen/quantiquen3.webp",
+  //     "/images/gallery/quantiquen/quantiquen4.webp",
+  //     "/images/gallery/quantiquen/quantiquen5.webp",
+  //     "/images/gallery/quantiquen/quantiquen6.webp",
+  //     "/images/gallery/quantiquen/quantiquen7.webp",
+  //     "/images/gallery/quantiquen/quantiquen8.webp",
+  //     "/images/gallery/quantiquen/quantiquen9.webp",
+  //     "/images/gallery/quantiquen/quantiquen10.webp",
+  //     "/images/gallery/quantiquen/quantiquen11.webp",
+  //     "/images/gallery/quantiquen/quantiquen12.webp",
+  //     "/images/gallery/quantiquen/quantiquen13.webp",
+  //     "/images/gallery/quantiquen/quantiquen14.webp",
+  //     "/images/gallery/quantiquen/quantiquen15.webp",
+  //     "/images/gallery/quantiquen/quantiquen16.webp",
+  //   ],
+  //   tags: [
+  //     "Next.js",
+  //     "TypeScript",
+  //     "Tailwind CSS",
+  //     "ChadCN",
+  //     "Node.js",
+  //     "Express.js",
+  //     "Nest.js",
+  //     "Redis (BullMQ)",
+  //     "Docker",
+  //     "PostgreSQL (Prisma ORM)",
+  //   ],
+  //   features: [
+  //     "Security Decision Intelligence Engine: Pulls raw security telemetry across your organization, runs it through context and risk analysis, and converts it into human-approved decisions and recommendations—taking you straight from raw data to actionable outcomes.",
+  //     "Multi-Tenant Architecture: Keeps data completely separate and secure for different clients, teams, or departments using the same system.",
+  //     "Enterprise Identity & Access Control: Uses strong authentication and fine-grained role permissions (RBAC) so users only see and access what they are supposed to.",
+  //     "Risk-Based Step-Up Authentication: Continuously checks user behavior and location in real time, automatically triggering extra security steps if an action looks suspicious or high-risk.",
+  //     "Zero Trust API Security Gateway: Follows a strict never trust, always verify rule, checking and validating every single API request to block unauthorized access and prevent data leaks.",
+  //   ],
+  //   repos: [
+  //     {
+  //       label: "Frontend",
+  //       url: "https://github.com/kalidashodekare14/HelpLink_Frontend",
+  //       isPrivate: true,
+  //     },
+  //     {
+  //       label: "Backend",
+  //       url: "https://github.com/kalidashodekare14/quantiqen-backend",
+  //       isPrivate: true,
+  //     },
+  //     {
+  //       label: "Auth Backend",
+  //       url: "https://github.com/kalidashodekare14/quantiqen-identity",
+  //       isPrivate: true,
+  //     },
+  //   ],
+  //   live: "https://quantiqen.vercel.app",
+  //   challenges: [
+  //     {
+  //       title: "Strict Multi-Tenant Data Isolation",
+  //       challenge:
+  //         "Hosting multiple organizations on a single backend creates a severe risk of accidental data leaks if application-level filters fail.",
+  //       solution:
+  //         "Enforced PostgreSQL Row-Level Security (RLS) directly at the database layer. This guarantees complete data isolation between tenants, ensuring data remains secure even if a backend query drops a filter by mistake",
+  //     },
+  //     {
+  //       title: "Heavy Event Traffic & System Latency",
+  //       challenge:
+  //         "Processing massive streams of real-time security telemetry simultaneously can overload the core server and degrade API performance.",
+  //       solution:
+  //         "Architected an asynchronous event processing pipeline using Redis and BullMQ. This offloads heavy background workloads, keeping the main API fast, responsive, and resilient.",
+  //     },
+  //     {
+  //       title: "Token Theft & Session Hijacking",
+  //       challenge:
+  //         "Static session management leaves the platform vulnerable to token reuse and unauthorized access.",
+  //       solution:
+  //         "Implemented opaque refresh tokens paired with an atomic Redis rotation script. If a stolen token is reused, the system instantly detects the anomaly and revokes the entire session family to secure the user.",
+  //     },
+  //     {
+  //       title: "Unreliable AI Risk Scores & Hallucinations",
+  //       challenge:
+  //         "Relying purely on AI models for risk assessment can lead to inconsistent scoring and false positives.",
+  //       solution:
+  //         "Separated risk scoring from AI analysis using a deterministic policy engine and fixed mathematical formulas. The AI engine is restricted to generating natural-language summaries, while exact policy rules handle the core scoring.",
+  //     },
+  //     {
+  //       title: "Automated Bot Attacks & Password Spraying",
+  //       challenge:
+  //         "High-frequency credential stuffing and bot traffic can flood database resources and compromise user credentials.",
+  //       solution:
+  //         "Deployed Turnstile CAPTCHA upfront and enforced strict per-IP and per-ASN rate limiting in Redis to block malicious traffic before it touches the database.",
+  //     },
+  //     {
+  //       title: "Securing API Access in High-Risk Scenarios",
+  //       challenge:
+  //         "Basic password checks and static API keys fail to protect sensitive endpoints during suspicious user activity.",
+  //       solution:
+  //         "Built a Zero Trust API Security Gateway backed by EdDSA Cryptographic Verification and Risk-Based Step-Up Auth. It continuously evaluates incoming requests and triggers extra multi-factor verification whenever an action appears risky.",
+  //     },
+  //   ],
+  //   demoCredentials: [
+  //     { label: "Organization ID", value: "QTN-ORG-VNEFV0A" },
+  //     { label: "User ID", value: "sumon_amazon" },
+  //     { label: "Password", value: "SumonRoy00@#" },
+  //   ],
+  //   technicalHighlights: [
+  //     "Database-Level Multi-Tenancy: Protected customer data using PostgreSQL Row-Level Security (RLS). This ensures complete tenant isolation at the database layer, keeping data safe even if an application-level filter fails.",
+  //     "Asynchronous Event Processing: Handled heavy streams of real-time security telemetry smoothly using Redis and BullMQ background workers, preventing any lag on the core API server.",
+  //     "Zero Trust & Cryptographic Security: Built a Zero Trust API Security Gateway powered by EdDSA cryptographic verification and Risk-Based Step-Up Authentication to continuously validate incoming requests.",
+  //     "Secure Session Management & Theft Protection: Managed opaque refresh tokens with an atomic Redis rotation script. If a stolen token is reused, the system instantly catches it and revokes the entire session family.",
+  //     "Deterministic Risk Scoring (AI Decoupling): Separated AI analysis from actual scoring by using a deterministic policy engine and fixed formulas. The AI only provides natural-language summaries, ensuring risk scores are always reliable and never hallucinated.",
+  //     "Advanced Bot & Rate-Limit Defense: Blocked automated bot traffic and password spraying upfront using Turnstile CAPTCHA and strict per-IP and per-ASN rate limiting in Redis before requests ever hit the database.",
+  //   ],
+  //   // achievements: [
+  //   //   "Connected 500+ volunteers with disaster-affected communities",
+  //   //   "Reduced response time by 60% compared to traditional methods",
+  //   //   "Featured in local tech community showcase",
+  //   // ],
+  //   // futureEnhancements: [
+  //   //   "AI-powered volunteer-task matching optimization",
+  //   //   "Mobile app development with React Native",
+  //   //   "Integration with government disaster management APIs",
+  //   //   "Multi-language support for broader accessibility",
+  //   // ],
+  // },
   {
     id: "helplink",
     title: "HelpLink",
